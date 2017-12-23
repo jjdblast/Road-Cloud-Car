@@ -43,7 +43,7 @@ def data_collector(img_msg, twist_msg):
     with open(twist_filename, 'wb') as csvfile:
         twistwriter = csv.writer(csvfile, delimiter=',')
 	## throte, steering
-        twistwriter.writerow([round(vel_cmd.linear.x, 5), round(vel_cmd.angular.z, 5)])
+        twistwriter.writerow([str_timestamp, round(vel_cmd.linear.x, 5), round(vel_cmd.angular.z, 5)])
     #print("time=" + str_timestamp)
     #print("throte=%.5f, steering=%.5f") % (vel_cmd.linear.x, vel_cmd.angular.z)
     
